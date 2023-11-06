@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>ToDo</title>
+</head>
+<body class="main-design">
+    <header>
+        <img src="" alt="">
+        <h1>Project Manager</h1> <!-- Note. Do. Succeed. -->
+    </header>
+    <main>
+        <section id="project-view">
+            <!--
+            <div class="project">
+                <h4 class="project-name">Project Placeholder</h4>
+                <img src="" alt="" class="project-edit">
+                <img src="" alt="" class="project-delete">
+                <p class="project-description">This is the Project description, it also may be
+                    a bit longer, but you know, it does not have to be this case.
+                    But it sure can happen that the description is a bit longer
+                </p>
+            </div>
+            -->
+            <div id="project-create">
+                <p>Create new project</p>
+            </div>
+        </section>
+        <section id="task-view">
+            <!--
+            <div class="task">
+                <h4 class="task-name">Task Placeholder</h4>
+                <img src="" alt="" class="task-edit">
+                <img src="" alt="" class="task-delete">
+                <p class="task-description">This is the Task description, it also may be
+                    a bit longer, but you know, it does not have to be this case.
+                    But it sure can happen that the description is a bit longer
+                    than the one of the Project Placeholder
+                </p>
+                <img src="" alt="" class="task-duedate-img">
+                <p class="task-created-text">Created:</p>
+                <p class="task-created-time">04.11 - 12:30h</p>
+                <p class="task-duedate-text">Due:</p>
+                <p class="task-duedate-time">08.11 - 11:30h</p>
+            </div>
+            -->
+            <div id="task-create">
+                <p>Create new Task</p>
+            </div>
+        </section>
+        <section id="display-edit-crete-view">
+            <!--== DiSPLAY ==-->
+            <div id="display-project" class="views inactive">
+                <h3 class="display-project-name">Project Placeholder</h3>
+                <p class="display-project-description">This is the Project description,
+                    it also may be a bit longer, but you know, it does not have to
+                    be this case. But it sure can happen that the description is a bit longer
+                </p>
+            </div>
+            <div id="display-task" class="views inactive">
+                <h3 class="display-task-name">Task Placeholder</h3>
+                <p class="display-task-description">
+                    This is the Task description, it also may be
+                    a bit longer, but you know, it does not have to be this case.
+                    But it sure can happen that the description is a bit longer
+                    than the one of the Project Placeholder
+                </p>
+                <div class="display-task-duedate">
+                    <img src="" alt="" class="display-task-duedate-img">
+                    <p class="display-task-duedate-time">08.11 - 11:30h</p>
+                </div>
+            </div>
+            <!--== EDIT ==-->
+            <div id="create-or-edit-project" class="views inactive">
+                <h3>Create a new Project</h3>
+                <form>
+                    <label hidden for="input-project-name">Project name</label>
+                    <input class="inputs" type="text" maxlength="100" id="input-project-name" name="project-name" placeholder="Project name" required/><br>
+                    <label hidden for="input-project-description">Project description</label>
+                    <textarea class="inputs" id="input-project-description" name="project-description" placeholder="Project description"></textarea>
+                </form>
+                <div>
+                    <div id="cancel-project"><p>Cancel</p></div>
+                    <div id="submit-project">Submit</div>
+                </div>
+            </div>
+            <div id="create-or-edit-task" class="views inactive">
+                <h3>Create a new Task</h3>
+                <form>
+                    <label hidden for="input-task-name">task name</label>
+                    <input class="inputs" type="text" maxlength="100" id="input-task-name" name="task-name" placeholder="Task name" required/><br>
+                    <label hidden for="input-task-description">task description</label>
+                    <textarea class="inputs" id="input-task-description" name="task-description" placeholder="Task description"></textarea>
+                    <label hidden for="input-task-duedate" >task due date</label>
+                    <span hidden id="date-format">DD-MM-YYYY</span>
+                    <input class="inputs" type="date" aria-describedby="date-format" id="input-task-duedate" min="2022-01-01" required/>
+                </form>
+                <div>
+                    <div id="cancel-task"><p>Cancel</p></div>
+                    <div id="submit-task"><p>Submit</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/todo.js"></script>
+</body>
+</html>

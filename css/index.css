@@ -1,0 +1,350 @@
+/* TAG DESIGN */
+body, h1, h2, h3, h4, p {
+    padding: 0;
+    margin: 0;
+    font-family: Simplifica, sans-serif;
+}
+
+h1 {
+    font-size: var(--heading-1);
+ }
+
+h2 {
+    font-size: var(--heading-2);
+}
+
+h3 {
+    font-size: var(--heading-3);
+}
+
+h4 {
+    font-size: var(--heading-4);
+}
+
+p {
+    font-size: var(--paragraph);
+}
+
+/* HEADER */
+
+header {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 60px;
+    grid-template-columns: 50px 1fr;
+    gap: 20px;
+
+    width: calc(100vw - 100px);
+
+    padding: 0 50px 0 50px;
+}
+
+header > img {
+    height: 50px;
+    width: 50px;
+
+    justify-self: center;
+    align-self: center;
+}
+
+header > h1 {
+    align-self: center;
+}
+
+/* MAIN */
+
+main {
+    display: grid;
+    grid-template-columns: 2fr 2fr 3fr;
+    grid-template-rows: calc(100vh - 60px);
+    gap: 24px;
+}
+
+.project-edit, .project-delete, .task-edit, .task-delete, .task-duedate-img, .display-task-duedate-img {
+    height: 24px;
+    width: 24px;
+
+    justify-self: center;
+    align-self: center;
+}
+
+.project:hover .project-edit, .task:hover .task-edit {
+    display: flex;
+}
+
+.project:hover .project-delete, .task:hover .task-delete {
+    display: flex;
+}
+
+/* MAIN - PROJECT VIEW */
+#project-view {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: lightgrey;
+    margin: 20px 0 20px 50px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project {
+    display: grid;
+    grid-template-columns: 1fr 28px 28px;
+    grid-template-rows: 28px 1fr;
+    gap: 5px;
+
+    padding: 5px;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.selected {
+    background-color: #999;
+}
+
+.project:hover {
+    background-color: #888;
+}
+
+.project-name {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.project-edit {
+    display: none;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background-color: coral;
+}
+
+.project-delete {
+    display: none;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    background-color: coral;
+}
+
+.project-description {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+}
+
+#project-create {
+    background-color: #AAA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-radius: 5px;
+}
+
+#project-create:hover, .project:hover, .project-edit:hover, .project-delete:hover {
+    cursor: pointer;
+}
+
+/* MAIN - TASK VIEW*/
+#task-view {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: lightgrey;
+    margin: 20px 0 20px 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 28px 72px 128px 1fr 28px 28px;
+    grid-template-rows: 28px 1fr 28px 28px;
+    gap: 5px;
+
+    padding: 5px;
+    border-radius: 5px;
+    background-color: grey;
+}
+
+.highlight-twoDays {
+    background-color: gold;
+}
+
+.highlight-missed {
+    background-color: tomato;
+}
+
+.task-name {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+}
+
+.task-edit {
+    display: none;
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    background-color: coral;
+}
+
+.task-delete {
+    display: none;
+    grid-column: 6 / 7;
+    grid-row: 1 / 2;
+    background-color: coral;
+}
+
+.task-description {
+    grid-column: 1 / 7;
+    grid-row: 2 / 3;
+}
+
+.task-duedate-img {
+    grid-column: 1 / 2;
+    grid-row: 3 / 5;
+
+    width: 24px;
+    justify-self: center;
+    align-self: center;
+}
+
+.task-created-time, .task-duedate-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-created-text {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+
+    padding-left: 10px;
+}
+
+.task-created-time {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+.task-duedate-text {
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+
+    padding-left: 10px;
+}
+
+.task-duedate-time {
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+}
+
+#task-create {
+    background-color: #AAA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    border-radius: 5px;
+}
+
+#task-create:hover, .task:hover {
+    cursor: pointer
+}
+
+/* MAIN - CREATE & EDIT VIEW */
+#display-edit-crete-view {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 10px;
+    background-color: lightgrey;
+    margin: 20px 50px 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* MAIN - */
+.active {
+    display: flex;
+}
+
+.inactive {
+    display: none;
+}
+
+/* MAIN - DISPLAY, EDIT & CREATE VIEW - SHOW */
+#display-project, #display-task {
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* MAIN - DISPLAY, EDIT & CREATE VIEW - DISPLAY - TASK */
+
+
+.display-task-duedate {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* MAIN - DISPLAY, EDIT & CREATE VIEW - CREATE/EDIT - PROJECT/TASK */
+#create-or-edit-project, #create-or-edit-task {
+    flex-direction: column;
+    gap: 10px;
+}
+
+#create-or-edit-project > form, #create-or-edit-task > form {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.inputs {
+    border: 1px solid lightgrey;
+    height: 24px;
+    width: min(600px, max(300px, 80%));
+    border-radius: 10px;
+    padding: 0 12px 0 12px;
+
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.inputs:hover {
+    border: 1px solid grey;
+}
+
+.inputs:focus {
+    outline-style: solid;
+    outline-color: coral;
+}
+
+#input-project-description, #input-task-description {
+    height: 48px;
+    resize: none;
+}
+
+#create-or-edit-task > div, #create-or-edit-project > div {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 100px 100px 1fr;
+    grid-template-rows: 24px;
+    gap: 10px;
+}
+
+#cancel-project, #cancel-task, #submit-project, #submit-task {
+    display: flex;
+    background-color: grey;
+    cursor: pointer;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+/* VARIABLES */
+
+.main-design {
+    --heading-1: 46px;
+    --heading-2: 38px;
+    --heading-3: 32px;
+    --heading-4: 26px;
+    --paragraph: 22px
+}
