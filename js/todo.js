@@ -231,7 +231,7 @@ class ToDoManager {
         let inputName = document.getElementById('input-project-name').value;
         let inputDesc = document.getElementById('input-project-description').value;
 
-        if(inputName === "" || inputName !== null) {
+        if(inputName === "" || inputName === null) {
             alert('Bitte Name eingeben');
             return false;
         }
